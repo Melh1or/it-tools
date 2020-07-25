@@ -41,7 +41,7 @@ const EditLogoModal = () => {
             <select
               name="tech"
               value={tech}
-              className="browser-default" o
+              className="browser-default"
               onChange={e => setTech(e.target.value)}
             >
               <option value="" disabled>Select Technician</option>
