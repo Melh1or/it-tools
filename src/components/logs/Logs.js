@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import LogItem from "./LogItem";
 import Loader from "../layout/Loader";
-import { getLogs } from "../../actions/logActions";
+import {deleteLog, getLogs} from "../../actions/logActions";
 
-const Logs = ({ getLogs, loading, logs}) => {
+const Logs = ({ getLogs, loading, logs, deleteLog }) => {
   useEffect(() => {
     getLogs()
   }, [])
@@ -22,7 +22,12 @@ const Logs = ({ getLogs, loading, logs}) => {
       {
         !loading && logs.length === 0
         ? <p className="center">No logs to show...</p>
-        : logs.map(log => <LogItem key={log.id} log={log} />)
+        : logs.map(log => (
+            <LogItem
+              key={log.id}
+              log={log}
+              deleteLog={deleteLog}
+            />))
       }
     </ul>
   )
@@ -31,15 +36,17 @@ const Logs = ({ getLogs, loading, logs}) => {
 Logs.propTypes = {
   logs: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
+  getLogs: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
   logs: state.log.logs,
-  loading: state.log.loading
+  loading: state.log.loading,
 })
 
 const mapDispatchToProps = {
-  getLogs
+  getLogs,
+  deleteLog
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Logs)

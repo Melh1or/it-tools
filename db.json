@@ -1,25 +1,11 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "date": "2019-05-31T15:46:10.179Z",
-      "tech": "Sam Smith"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007",
+      "message": "Error",
+      "tech": "John Doe",
       "attention": true,
-      "date": "2019-05-31T15:46:10.179Z",
-      "tech": "John Smith"
-    },
-    {
-      "id": 3,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "date": "2019-05-31T15:46:10.179Z",
-      "tech": "Tom Smith"
+      "date": "2020-07-25T19:06:12.078Z",
+      "id": 1
     }
   ],
   "techs": [

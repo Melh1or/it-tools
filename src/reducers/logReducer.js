@@ -1,7 +1,9 @@
 import {
   GET_LOGS,
   SET_LOADING,
-  LOGS_ERROR
+  LOGS_ERROR,
+  ADD_LOG, DELETE_LOG,
+
 } from '../actions/types'
 
 
@@ -30,6 +32,18 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         error: payload,
         loading: false
+      }
+    case ADD_LOG:
+      return {
+        ...state,
+        loading: false,
+        logs: [...state.logs, payload]
+      }
+    case DELETE_LOG:
+      return {
+        ...state,
+        loading: false,
+        logs: state.logs.filter(log => log.id !== payload)
       }
     default:
       return state
