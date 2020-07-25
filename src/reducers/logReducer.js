@@ -2,7 +2,7 @@ import {
   GET_LOGS,
   SET_LOADING,
   LOGS_ERROR,
-  ADD_LOG, DELETE_LOG,
+  ADD_LOG, DELETE_LOG, SET_CURRENT, CLEAR_CURRENT, UPDATE_LOG,
 
 } from '../actions/types'
 
@@ -44,6 +44,22 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         loading: false,
         logs: state.logs.filter(log => log.id !== payload)
+      }
+    case SET_CURRENT:
+      return {
+        ...state,
+        current: payload
+    }
+    case CLEAR_CURRENT:
+      return {
+        ...state,
+        current: null
+      }
+    case UPDATE_LOG:
+      return {
+        ...state,
+        logs: state.logs.map(log => log.id === payload.id ? payload : log),
+        loading: false
       }
     default:
       return state

@@ -4,7 +4,7 @@ import {
   LOGS_ERROR,
   ADD_LOG,
   DELETE_LOG,
-  SET_CURRENT,
+  SET_CURRENT, CLEAR_CURRENT, UPDATE_LOG,
 
 } from './types'
 
@@ -79,11 +79,42 @@ export const deleteLog = (id) => async dispatch => {
 }
 
 // Set current log
-export const setCurrentLog = log => ({
+export const setCurrent= log => ({
   type: SET_CURRENT,
   payload: log
 })
 
+// Update log
+export const updateLog = (log) => async dispatch => {
+  try {
+    dispatch(setLoading())
+
+    const res = await fetch(`/logs/${log.id}`, {
+      method: "PUT",
+      body: JSON.stringify(log),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await res.json()
+
+    dispatch({
+      type: UPDATE_LOG,
+      payload: data
+    })
+  } catch (err) {
+    console.log(err)
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err
+    })
+  }
+}
+
+// Clear current log
+export const clearCurrent = () => ({
+  type: CLEAR_CURRENT
+})
 
 // Set loading false
 export const setLoading = () => ({

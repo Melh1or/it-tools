@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 
 import LogItem from "./LogItem";
 import Loader from "../layout/Loader";
-import {deleteLog, getLogs} from "../../actions/logActions";
+import { getLogs } from "../../actions/logActions";
 
-const Logs = ({ getLogs, loading, logs, deleteLog }) => {
+const Logs = ({ getLogs, loading, logs, deleteLog, setCurrent }) => {
   useEffect(() => {
     getLogs()
   }, [])
@@ -22,12 +22,7 @@ const Logs = ({ getLogs, loading, logs, deleteLog }) => {
       {
         !loading && logs.length === 0
         ? <p className="center">No logs to show...</p>
-        : logs.map(log => (
-            <LogItem
-              key={log.id}
-              log={log}
-              deleteLog={deleteLog}
-            />))
+        : logs.map(log => <LogItem key={log.id} log={log} />)
       }
     </ul>
   )
@@ -36,7 +31,7 @@ const Logs = ({ getLogs, loading, logs, deleteLog }) => {
 Logs.propTypes = {
   logs: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
-  getLogs: PropTypes.func.isRequired
+  getLogs: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
@@ -46,7 +41,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getLogs,
-  deleteLog
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Logs)
