@@ -4,21 +4,21 @@
       "id": 1,
       "message": "Changed hard drive on workstation 005",
       "attention": false,
-      "date": "03-02-2020",
+      "date": "2019-05-31T15:46:10.179Z",
       "tech": "Sam Smith"
     },
     {
       "id": 2,
       "message": "Workstation 007",
       "attention": true,
-      "date": "03-02-2020",
+      "date": "2019-05-31T15:46:10.179Z",
       "tech": "John Smith"
     },
     {
       "id": 3,
       "message": "Changed hard drive on workstation 005",
       "attention": false,
-      "date": "03-02-2020",
+      "date": "2019-05-31T15:46:10.179Z",
       "tech": "Tom Smith"
     }
   ],

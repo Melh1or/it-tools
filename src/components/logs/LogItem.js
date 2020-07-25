@@ -1,4 +1,5 @@
 import React from 'react'
+import Moment from "react-moment";
 import PropTypes from 'prop-types'
 
 const LogItem = ({ log }) => {
@@ -11,6 +12,17 @@ const LogItem = ({ log }) => {
           className={`modal-trigger ${log.attention ? 'red-text' : 'blue-text'}`}
         >
           {log.message}
+        </a>
+        <br/>
+        <span className="grey-text">
+          <span className="black-text">Log #{log.id}</span>
+          &nbsp;last updated by&nbsp;
+          <span className="black-text">{log.tech}</span>
+          &nbsp;on&nbsp;
+          <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
+        </span>
+        <a href="#!" className="secondary-content">
+          <i className="material-icons grey-text">delete</i>
         </a>
       </div>
     </li>
