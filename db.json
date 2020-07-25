@@ -2,21 +2,21 @@
   "logs": [
     {
       "id": 1,
-      "messages": "Changed hard drive on workstation 005",
+      "message": "Changed hard drive on workstation 005",
       "attention": false,
       "date": "03-02-2020",
       "tech": "Sam Smith"
     },
     {
       "id": 2,
-      "messages": "Workstation 007",
+      "message": "Workstation 007",
       "attention": true,
       "date": "03-02-2020",
       "tech": "John Smith"
     },
     {
       "id": 3,
-      "messages": "Changed hard drive on workstation 005",
+      "message": "Changed hard drive on workstation 005",
       "attention": false,
       "date": "03-02-2020",
       "tech": "Tom Smith"
