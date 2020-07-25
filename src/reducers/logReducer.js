@@ -6,7 +6,7 @@ import {
 
 
 const initialState = {
-  logs: null,
+  logs: [],
   current: null,
   loading: false,
   error: null

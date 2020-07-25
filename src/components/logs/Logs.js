@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
 import LogItem from "./LogItem";
 import Loader from "../layout/Loader";
+import { getLogs } from "../../actions/logActions";
 
-const Logs = () => {
-  const [logs, setLogs] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  const getLogs = async () => {
-    setLoading(true)
-
-    const res = await fetch('/logs')
-    const data = await res.json()
-
-    setLogs(data)
-    setLoading(false)
-  }
-
+const Logs = ({ getLogs, loading, logs}) => {
   useEffect(() => {
     getLogs()
   }, [])
@@ -37,4 +28,18 @@ const Logs = () => {
   )
 }
 
-export default Logs
+Logs.propTypes = {
+  logs: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = state => ({
+  logs: state.log.logs,
+  loading: state.log.loading
+})
+
+const mapDispatchToProps = {
+  getLogs
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Logs)
