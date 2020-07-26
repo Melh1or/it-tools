@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import M from 'materialize-css/dist/js/materialize.min'
 import {connect} from "react-redux";
-import PropTypes from 'prop-types'
 
 import { updateLog } from "../../actions/logActions";
 import TechSelectOptions from "../techs/TechSelectOptions";
@@ -103,11 +102,6 @@ const modalStyle = {
   width: '75%',
   height: '75%'
 }
-
-// EditLogoModal.propTypes = {
-//   current: PropTypes.oneOfType([PropTypes.object, null]).isRequired,
-//   updateLog: PropTypes.func.isRequired,
-// }
 
 const mapStateToProps = state => ({
   current: state.log.current

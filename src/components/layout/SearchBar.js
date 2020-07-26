@@ -8,9 +8,8 @@ import {searchLogs} from "../../actions/logActions";
 const SearchBar = ({ searchLogs }) => {
   const [text, setText] = useState('')
   const debouncedSearchTerm = useDebounce(text, 1000);
-
   useEffect(() => {
-    if (debouncedSearchTerm) {
+    if (debouncedSearchTerm || debouncedSearchTerm === '') {
       searchLogs(debouncedSearchTerm)
     }
   }, [debouncedSearchTerm])

@@ -1,4 +1,4 @@
-import {ADD_TECH, DELETE_TECH, GET_TECH, SET_LOADING, TECH_ERROR} from "../actions/types";
+import {ADD_TECH, DELETE_TECH, GET_TECH, SET_LOG_LOADING, TECH_ERROR} from "../actions/types";
 
 const initialState = {
   techs: [],
@@ -8,7 +8,7 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case SET_LOADING:
+    case SET_LOG_LOADING:
       return {
         ...state,
         loading: true
