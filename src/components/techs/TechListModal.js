@@ -25,7 +25,7 @@ const TechListModal = ({ techs, getTechs, loading }) => {
 }
 
 TechListModal.propTypes = {
-  tech: PropTypes.array.isRequired,
+  techs: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
   getTechs: PropTypes.func.isRequired,
 }

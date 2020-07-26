@@ -12,5 +12,6 @@ export const GET_TECH = 'GET_TECH'
 export const ADD_TECH = 'ADD_TECH'
 export const DELETE_TECH = 'DELETE_TECH'
 export const TECH_ERROR = 'TECH_ERROR'
+export const SET_TECH_LOADING = 'SET_TECH_LOADING'
 
 export const SET_LOADING = 'SET_LOADING'

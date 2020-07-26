@@ -104,10 +104,10 @@ const modalStyle = {
   height: '75%'
 }
 
-EditLogoModal.propTypes = {
-  current: PropTypes.object.isRequired,
-  updateLog: PropTypes.func.isRequired,
-}
+// EditLogoModal.propTypes = {
+//   current: PropTypes.oneOfType([PropTypes.object, null]).isRequired,
+//   updateLog: PropTypes.func.isRequired,
+// }
 
 const mapStateToProps = state => ({
   current: state.log.current
