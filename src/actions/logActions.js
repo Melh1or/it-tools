@@ -4,7 +4,7 @@ import {
   LOGS_ERROR,
   ADD_LOG,
   DELETE_LOG,
-  SET_CURRENT, CLEAR_CURRENT, UPDATE_LOG,
+  SET_CURRENT, CLEAR_CURRENT, UPDATE_LOG, SEARCH_LOGS,
 
 } from './types'
 
@@ -115,6 +115,27 @@ export const updateLog = (log) => async dispatch => {
 export const clearCurrent = () => ({
   type: CLEAR_CURRENT
 })
+
+// Search logs
+export const searchLogs = (text) => async dispatch => {
+  try {
+    dispatch(setLoading())
+
+    const res = await fetch(`/logs?q=${text}`)
+    const data = await res.json()
+
+    dispatch({
+      type: SEARCH_LOGS,
+      payload: data
+    })
+  } catch (err) {
+    console.log(err)
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err
+    })
+  }
+}
 
 // Set loading false
 export const setLoading = () => ({
