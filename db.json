@@ -1,77 +1,18 @@
 {
   "logs": [
     {
-      "id": 2,
-      "message": "show some",
-      "tech": "John Smith",
+      "message": "Download Solid",
+      "tech": "Serhii Trachuk",
       "attention": true,
-      "date": "2020-07-25T21:18:55.518Z"
-    },
-    {
-      "message": "some ",
-      "tech": "Tom Smith",
-      "attention": true,
-      "date": "2020-07-25T21:13:21.979Z",
-      "id": 3
-    },
-    {
-      "message": "problem",
-      "tech": "Tom Smith",
-      "attention": true,
-      "date": "2020-07-26T09:35:29.021Z",
-      "id": 4
+      "date": "2020-07-26T10:06:39.175Z",
+      "id": 1
     }
   ],
   "techs": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe"
-    },
-    {
-      "id": 2,
-      "firstName": "John",
-      "lastName": "Smith"
-    },
-    {
-      "id": 3,
-      "firstName": "Tom",
-      "lastName": "Smith"
-    },
-    {
       "firstName": "Serhii",
       "lastName": "Trachuk",
-      "id": 4
-    },
-    {
-      "firstName": "Roman",
-      "lastName": "Pavlovskiy",
-      "id": 5
-    },
-    {
-      "firstName": "Andrii",
-      "lastName": "Severyn",
-      "id": 6
-    },
-    {
-      "firstName": "Rom",
-      "lastName": "Myhalishin",
-      "id": 7
-    },
-    {
-      "firstName": "Good",
-      "lastName": "Boy",
-      "id": 8
-    },
-    {
-      "firstName": "New",
-      "lastName": "sadf",
-      "id": 9
-    },
-    {
-      "firstName": "Some ",
-      "lastName": "asdf",
-      "id": 10
+      "id": 1
     }
   ]
 }

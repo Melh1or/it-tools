@@ -57,7 +57,8 @@ const AddLogoModal = ({ addLog }) => {
               className="browser-default"
               onChange={e => setTech(e.target.value)}
             >
-             <TechSelectOptions />
+              <option value='' disabled>Select Technician</option>
+              <TechSelectOptions />
             </select>
           </div>
         </div>

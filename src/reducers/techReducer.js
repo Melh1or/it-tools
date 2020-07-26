@@ -1,4 +1,4 @@
-import {ADD_TECH, GET_TECH, SET_LOADING, TECH_ERROR} from "../actions/types";
+import {ADD_TECH, DELETE_TECH, GET_TECH, SET_LOADING, TECH_ERROR} from "../actions/types";
 
 const initialState = {
   techs: [],
@@ -29,6 +29,12 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         techs: [...state.techs, payload],
+        loading: false
+      }
+    case DELETE_TECH:
+      return {
+        ...state,
+        techs: state.techs.filter(t => t.id !== payload),
         loading: false
       }
     default:
