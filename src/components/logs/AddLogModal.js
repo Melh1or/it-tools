@@ -4,6 +4,7 @@ import M from 'materialize-css/dist/js/materialize.min'
 import PropTypes from 'prop-types'
 
 import { addLog } from "../../actions/logActions";
+import TechSelectOptions from "../techs/TechSelectOptions";
 
 const AddLogoModal = ({ addLog }) => {
   const [message, setMessage] = useState('')
@@ -56,10 +57,7 @@ const AddLogoModal = ({ addLog }) => {
               className="browser-default"
               onChange={e => setTech(e.target.value)}
             >
-              <option value="" disabled>Select Technician</option>
-              <option value="John Doe">John Doe</option>
-              <option value="John Smith">John Smith</option>
-              <option value="Tom Smith">Tom Smith</option>
+             <TechSelectOptions />
             </select>
           </div>
         </div>
